@@ -1,3 +1,9 @@
+---
+title: "Hi all! I'm ssoxong👋🏻"
+permalink: /about/
+layout: single
+comments: false
+---
 ## Hello! ssoxong's github
 <div align="center">
 use...
