@@ -21,7 +21,7 @@ sidebar-category:
   - title: "Security"
     children:
       - title: "Tutoring"
-        url: "/categories/2023-01"
+        url: "/categories/tutoring"
       - title: "Security Study"
         url:  "/categories/security"
         
