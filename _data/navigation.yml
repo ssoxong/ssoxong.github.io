@@ -16,12 +16,19 @@ sidebar-category:
     children:
       - title: "Data Base"
         url: "/categories/db"
+        category: "DB"
+
       - title: "Programming Language"
         url:  "/categories/pl"
+        category: "PL"
+
   - title: "Security"
     children:
       - title: "Tutoring"
         url: "/categories/tutoring"
+        category: "Tutoring"
+
       - title: "Security Study"
         url:  "/categories/security"
+        category: "Security"
         
