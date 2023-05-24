@@ -31,4 +31,14 @@ sidebar-category:
       - title: "Security Study"
         url:  "/categories/security"
         category: "Security"
+
+  - title: "Algorithm"
+    children:
+      - title: "Programmers"
+        url: "/categories/programmers"
+        category: "Programmers"
+
+      - title: "BOJ"
+        url:  "/categories/boj"
+        category: "BOJ"
         
