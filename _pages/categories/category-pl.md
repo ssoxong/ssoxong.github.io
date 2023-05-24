@@ -1,10 +1,9 @@
 ---
-title: "Study"
+title: "Programming Language"
 layout: archive
-permalink: categories/DB
-author_profile: true
-sidebar_main: true
+permalink: /categories/pl
 ---
 
-{% assign posts = site.categories.DB %}
+
+{% assign posts = site.categories.PL %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
