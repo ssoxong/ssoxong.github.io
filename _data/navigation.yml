@@ -10,3 +10,18 @@ main:
     url: "/categories/"
   - title: "Tags"
     url: /tags/
+
+sidebar-category:
+  - title: "Study"
+    children:
+      - title: "Data Base"
+        url: "/categories/db"
+      - title: "Programming Language"
+        url:  "/categories/pl"
+  - title: "Security"
+    children:
+      - title: "Tutoring"
+        url: "/categories/2023-01"
+      - title: "Security Study"
+        url:  "/categories/security"
+        
