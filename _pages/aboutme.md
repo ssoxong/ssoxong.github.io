@@ -4,12 +4,7 @@ permalink: /about/
 layout: single
 comments: false
 ---
-# 이소현
-
----
-
 ## ✔️ My Info
-
 ---
 
 ![ssoxong](https://github.com/ssoxong/ssoxong.github.io/assets/112956015/e15f803c-84f8-46c7-8b7d-ea5652896648)
@@ -24,13 +19,11 @@ Blog | [https://ssoxong.github.io/](https://ssoxong.github.io/)
 ## 🤗 저는..
 
 ---
-
 - 많은 것을 배워보고 싶은 개발자 이소현입니다.
 - “혹시 모르니 뭐든 열심히 해보자!” 라는 생각으로 살아가며, 열심히 공부하고 있습니다.
 - 제가 배운 것과 해낸 것, 하고 있는 것을 정리하는 페이지 입니다.
 
 ## 🛠️ 관심 분야 및 사용 기술
-
 ---
 
 정보 보안, 스마트 홈, Back-End
@@ -40,7 +33,6 @@ Blog | [https://ssoxong.github.io/](https://ssoxong.github.io/)
 개발 - JavaScript(Next.js), Java(Spring)
 
 ## ⏳ 타임 스탬프
-
 ---
 
 > 2023
@@ -70,7 +62,6 @@ Blog | [https://ssoxong.github.io/](https://ssoxong.github.io/)
     - 온라인 부정 수강 사례 코드 분석
 
 ## 👩🏻‍💻 프로젝트
-
 ---
 
 > 스마트 플러그 패킷 분석을 통한 취약 계층 및 1인 가구 보호
