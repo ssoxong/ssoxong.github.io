@@ -4,8 +4,7 @@ excerpt: "Programmers post"
 categories:
     - Programmers
 tags:
-  - [Programmers], [Algorithm]
-
+  - [Programmers, Algorithm]
 toc: true
 toc_sticky: true
 
