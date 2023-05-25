@@ -32,29 +32,29 @@ toc_sticky: true
 
 가정: pwd DB에 저장했는데 DB가 탈취됨..
 
-- 패스워드 그대로 저장 → 유출시 위험
+#### 패스워드 그대로 저장 → 유출시 위험
 
-- Hash(pwd) 저장 → 역상저항성으로 안전
+#### Hash(pwd) 저장 → 역상저항성으로 안전
 - 사전 공격(Dictionary Attack) + pre-computation table
-    
+
     흔한 패스워드를 미리 Hash한 후 사용자의 Hash값과 비교
-    
+
     원래 역상을 찾기 위해서는 전수조사가 필요해 2^160의 노력이 필요함 (SHA1 기준)
-    
+
     → 취약한 패스워드(흔한 패스워드) 쓰고 있으면 사전 공격을 통해 전수조사보다 빨리 알 수 있음
-    
-- Hash(pwd||salt) 저장!!
+        
+#### Hash(pwd||salt) 저장
 - 사전 공격, pre-computation table에 안전
-    
+
     취약한 pwd라고 해도 랜덤한 salt와 함께 Hash하니까 랜덤한 Hash값.
-    
+
     salt를 알고있다고 하더라도 pre-computation table 사용 어려움
-    
+
     → 사용하기 위해서는 hash(pwd||salt)값을 전부 구해야 하기 때문에 연산횟수는 동일
-    
+
 - salt 경우의 수도 고려해서 모든 경우의 수에 대한 해쉬값 저장 → pre-computation 만들기 어렵다…
 
-- 서버가 자신의 패스워드 알지 못하게..
+#### 서버가 자신의 패스워드 알지 못하게..
 1. Server → User (salt)
 2. User → Server (hash(pwd||salt))
 
@@ -75,16 +75,11 @@ OTP - One TIme Password
 
 - 방식
 
-
 | 동기화 | 비동기화 |
 | --- | --- |
 |  사용자로부터 어떤 값이 올지 서버가 알고있음,  | Challenge, Response 주고받는 방식, |
 | - 동기화 - 사용자로부터 어떤 값이 올지 서버가 알고있음, OTP가 서버와 동기화됨 | OTP가 항상 서버와 동기화 될 필요 없음 |
-|  사용자와 서버는 Seed 공유 후 동일한 패스워드 생성 (OTP)
-- 시간 동기화 hash(seed, T)
-- 이벤트 동기화 (Counter) hash(seed, C)
-→ 주로하는 방식 | 질의-응답 방식
-동기화 불필요, 통신량 증가 |
+|  사용자와 서버는 Seed 공유 후 동일한 패스워드 생성 (OTP) - 시간 동기화 hash(seed, T) - 이벤트 동기화 (Counter) hash(seed, C) → 주로하는 방식 | 질의-응답 방식 동기화 불필요, 통신량 증가 |
 
 ### 2.4 질의 응답 기반 인증
 
@@ -111,6 +106,7 @@ A가 보낸 T와 B가 측정한 T가 비슷하면 통과
 | 공개키 | 난수 | 단방향 |
 | 전자서명 | 타임스탬프 | 단방향 |
 |  | 난수 | 양방향 |
+
 - 해시 - 난수 - 양방향
 
 A-B 사이 공유된 key list존재
