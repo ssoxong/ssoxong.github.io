@@ -26,6 +26,9 @@ sidebar-category:
         url:  "/categories/sysprog"
         category: "SystemProgramming"
 
+      - title: "ETC" 
+        url:  "/categories/etc"
+        category: "etc"
 
   - title: "Security"
     children:
