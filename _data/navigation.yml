@@ -22,6 +22,11 @@ sidebar-category:
         url:  "/categories/pl"
         category: "PL"
 
+      - title: "System Programming"
+        url:  "/categories/sysprog"
+        category: "SystemProgramming"
+
+
   - title: "Security"
     children:
       - title: "Tutoring"
