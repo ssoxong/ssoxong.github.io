@@ -86,6 +86,7 @@ printf("%.*s", readLen, rBuff);
     - inet_addr() + ntohl() == inet_network()
     - inet_network() + htonl() == inet_addr()
 
+
 - 소켓 프로그램
     **server**
     socket -> bind -> listen -> accept -> read/write -> close
