@@ -101,6 +101,7 @@ socket -> connect -> write -> read -> closesocket
     UDP 소켓에서 sendto / recvfrom 호출하면 커널과 연결된다. -> 오버헤드 발생
     <br>
     UDP에 connect 사용하면 read / write 사용가능 -> 오버헤드 적어짐
+    <br>
     **하나의 UDP 소켓으로 여러 프로세스들과 통신 가능하다는 장점은 사라짐**
 
 
