@@ -45,6 +45,7 @@ last_modified_at: 2023-06-01
 
 ## 네트워크 계층
 ### OSI 7 Layer
+
 | Applicaion | 페이로드 | message |
 | --- | --- | --- |
 | Presentation | 페이로드 | message |
@@ -52,7 +53,7 @@ last_modified_at: 2023-06-01
 | Transport | 프로토콜(TCP/UDP) | segment |
 | Network | IP | packet |
 | Data Link | MAC | frame |
-| Physical | 아날로그 신호 | . |
+| Physical | 아날로그 신호 |  |
 
 1. 물리 계층
     실제 장치를 연결하는 데 필요한 물리적 사항  
@@ -114,7 +115,7 @@ last_modified_at: 2023-06-01
 | --- | --- |
 | Transport | TCP/UDP |
 | Internet | ICMP / ARP / IP |
-| Network Interface (Physical + DataLink) | . |
+| Network Interface (Physical + DataLink) |  |
 
 ## 네트워크 장비
 

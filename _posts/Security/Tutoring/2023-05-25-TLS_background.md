@@ -33,8 +33,7 @@ toc_sticky: true
 | --- | --- |
 | Transport | TCP/UDP |
 | Internet | ICMP / ARP / IP |
-| Network Interface
-(Physical + DataLink) |  |
+| Network Interface (Physical + DataLink) |  |
 
 실제 모델
 
