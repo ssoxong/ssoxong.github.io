@@ -111,11 +111,13 @@ last_modified_at: 2023-06-01
 표준이며, 개념적인 모델  
 
 ### TCP/IP
+
 | Application | HTTP / SMTP(메일) |
 | --- | --- |
 | Transport | TCP/UDP |
 | Internet | ICMP / ARP / IP |
 | Network Interface (Physical + DataLink) |  |
+
 
 ## 네트워크 장비
 
