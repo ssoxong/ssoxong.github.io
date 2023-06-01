@@ -114,8 +114,7 @@ last_modified_at: 2023-06-01
 | --- | --- |
 | Transport | TCP/UDP |
 | Internet | ICMP / ARP / IP |
-| Network Interface
-(Physical + DataLink) | . |
+| Network Interface (Physical + DataLink) | . |
 
 ## 네트워크 장비
 
