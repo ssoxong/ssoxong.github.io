@@ -22,6 +22,10 @@ sidebar-category:
         url:  "/categories/pl"
         category: "PL"
 
+      - title: "Network Programming"
+        url:  "/categories/np"
+        category: "NetworkProgramming"
+
       - title: "System Programming"
         url:  "/categories/sysprog"
         category: "SystemProgramming"
