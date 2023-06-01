@@ -52,7 +52,7 @@ last_modified_at: 2023-06-01
 | Transport | 프로토콜(TCP/UDP) | segment |
 | Network | IP | packet |
 | Data Link | MAC | frame |
-| Physical | 아날로그 신호 |  |
+| Physical | 아날로그 신호 | . |
 
 1. 물리 계층
     실제 장치를 연결하는 데 필요한 물리적 사항  
@@ -68,22 +68,42 @@ last_modified_at: 2023-06-01
 3. 네트워크
     여러 노드를 거칠 때마다 경로 찾아줌  
 
-    ex. IP, 라우팅
+    ex. IP, 라우팅, ICMP(오류 알림)
     - ARP(IP로 MAC 알아내기)
     -> ARP 자체는 L2에서 동작하나 L3과 연관된 정보가 필요함.
     따라서 L2와 L3을 연결해주는 프로토콜
+    - IP 주소 체계 -> A, B, C... 클래스 주소 체계
+
+    - 라우터 (=게이트웨이)
+        논리적으로 분리된 둘 이상의 네트워크를 연결(정적 / 동적 라우팅)
+
+        로컬 네트워크에서 브로드캐스트를 차단하여 네트워크를 분리 
+
 
 4. 전송 계층
     양 끝단 사용자들이 신뢰성 있는 데이터를 주고받을 수 있게 함
     ex. TCP(연결 지향, 신뢰성) / UDP  
+    - APP 데이터를 쪼개 TCP/UDP 헤더를 붙임
+    - 포트 주소
+        TCP가 상위 계층(앱)으로 데이터를 전달하거나 전달받을때 상호 간에 사용하는 데이터의 이동 통로
 
+    - TCP
+        신뢰성, 연결지향, 체크섬, 3-way handshake
+
+    - UDP
+        비연결지향형, 신뢰성이 없어 무결성X
 
 5. 세션 계층
     양 끝단의 응용 프로세스가 통신을 관리하기 위한 방법 제공
+    응용 프로그램 계층 사이의 접속을 설정/유지/종료시킴
+
 6. 표현 계층
     시스템에서 사용되는 코드간의 번역
+    데이터 표현 차이 해결
+
 7. 응용 계층
     사용자나 응용 프로그램 사이에 데이터 교환을 가능하게함  
+    사용자 인터페이스 제공
 
     ex. HTTP / FTP
 
@@ -95,6 +115,8 @@ last_modified_at: 2023-06-01
 | Transport | TCP/UDP |
 | Internet | ICMP / ARP / IP |
 | Network Interface
-(Physical + DataLink) |  |
+(Physical + DataLink) | . |
 
 ## 네트워크 장비
+
+![image](https://github.com/ssoxong/ssoxong.github.io/assets/112956015/33e9fed1-5d6b-41f7-858a-ba65fec2b2c5)
