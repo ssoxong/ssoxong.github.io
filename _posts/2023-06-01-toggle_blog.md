@@ -49,22 +49,6 @@ last_modified_at: 2023-06-01
 ```
 
 ## 토글 안에 코드 넣기!!
-<details>
-<summary>토글 안에 코드..?</summary>
-<div markdowm="1">
-
-```c++
-#include <iostream>
-
-int main(){
-    printf("Hello World!");
-    return 0;
-}
-```
-
-</div>
-</details>
-<br>
 
 ![image](https://github.com/ssoxong/ssoxong.github.io/assets/112956015/f81e28ac-8351-4261-999f-249716b09eb9)
 
