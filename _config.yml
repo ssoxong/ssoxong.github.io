@@ -287,7 +287,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
-      show_data: true
+      show_date: true
       comments: # true
       share: true
       related: true
@@ -304,6 +304,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
-      show_data: true
+      show_date: true
       sidebar:                  # 추가한 부분
         nav: "sidebar-category" # 추가한 부분
