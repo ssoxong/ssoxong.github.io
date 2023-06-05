@@ -284,3 +284,5 @@ where recPrereq.prereqID = prereq.courseID)
 
 select * from recPrereq;
 ```
+
+![image](https://github.com/parkminsoo99/Git_Business_Card_Web/assets/112956015/28146f1d-bf7a-4ed4-815d-86160dd80648)
