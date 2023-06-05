@@ -286,3 +286,114 @@ select * from recPrereq;
 ```
 
 ![image](https://github.com/parkminsoo99/Git_Business_Card_Web/assets/112956015/28146f1d-bf7a-4ed4-815d-86160dd80648)
+
+# 6장 연습문제
+
+#### 6.1 Using the relations of the second running schema (bank schema), write SQL expressions to define the following views. Also determine if the view is updatable. Justify your answer.  
+
+(a) A view containing the account numbers and customer names for all accounts at the ‘Sangdo-dong’ branch. 
+
+```sql
+Create view myView as
+(select a.accountNumber, d.customerName
+from account a, depositor d
+where a.branchName = 'sangdo-dong' and d.accountNumber = a.accountNumber)
+```
+업데이트 가능하다. 제약조건에 걸리는 거 없음.  
+
+(b) A view containing the names and addresses of all customers who have an account with the bank, but do not have a loan.   
+```sql
+create view myview as
+(select c.customerName, c.customerCity
+from (customer natural join depositor)
+except
+(customer natural join depositor natural join borrower))
+```
+업데이트 하지 못한다.  
+depositor의 primary key인 accountNumber에 대해 접근할 수 없기 때문이다. 
+
+(c) A view containing the name and average account balance of every customer of ‘Sangdo-dong’ branch. 
+```sql
+Create view myView as
+(select customername, avg(balance)
+from account natural join depositor
+where branchName = '상도동'
+group by customerName);
+```
+업데이트 하지 못한다.  
+집계 연산을 사용하고 있기 때문에..  
+또한 group by절을 사용하고 있음  
+<br>
+#### 6.2. SQL allows a foreign key dependency to refer to the same relations, as in the following example: 
+
+```sql
+Create table myManager ( 
+employeeName — char(20) not null, 
+managerName — char(20) not null, 
+primary key employeeName, 
+foreign key (managerName) references myManager on delete cascade); 
+```
+
+- Explain exactly what would happen when a tuple in “myManager’” is deleted? 
+
+myManager를 참조하고 있는 tuple도 연속적으로 삭제된다.
+
+
+#### 6.3. Consider the relational schema 
+```sql
+part(partID *, name, cost) 
+subpart(partID *, subpartID *, count) 
+```
+- A tuple (p1, p2, 3) in the “subpart” relation denotes that the part with partID p2 is a direct subpart of part with partID p1, and p1 has 3 copies of p2. Note that p2 may itself have further subparts. The underlined attributes denote the primary key, respectively. **Write a recursive SQL query that outputs the names of all subparts of the part with partID P-100.**
+```sql
+With recursive rec(partID, subpartID) as
+(select partID, subpartID from subpart)
+union
+(select rec.partID, subpart.subpartID
+from rec, subpart
+where rec.subpartID = subpart.partID)
+
+select name
+from rec, part
+where rec.partID = 'P100'
+and rec.subpartID = part.partID
+```
+재귀 돌려서 모든 선수과목 찾기
+
+#### 6.4.
+Consider the relational schema 
+```sql
+manages(eName, mName) 
+```
+where eName denotes an employee and mName denotes a manager name.  
+Define a relation 
+```sql
+employeeDepth(eName, mName, depth)
+```
+where "depth" indicates how many levels of intermediate managers are there between the employee and the manager. 
+Employees who are directly under a manager would have a depth of 0. 
+
+```sql
+with recursive employeedepth(ename, mname, depth) as
+(select ename, mname, 0
+from manages)
+union
+(select m.ename, e.mname, depth+1
+from manages m, employeedepth e
+where m.mname = e.ename);
+
+select * from employee depth;
+```
+
+
+#### 6.5.
+Suppose user A, who has all authorization on a relation R, grants select on relation R to public with grant option. 
+Suppose user B then grants select on R to A. Does this cause a cycle in the authorization graph?
+
+<br>
+A: R의 모든 권한  
+
+B: R의 select권한, 권한 부여 권한  
+A: R의 모든 권한 + B로받은 Select 권한
+
+--> select 권한에 대해 사이클 생성됨
