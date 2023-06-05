@@ -1,5 +1,5 @@
 ---
-title: "DB 연습문제"
+title: "DB 정리 및 연습문제"
 excerpt: "Data Base post"
 
 categories:
@@ -289,7 +289,8 @@ select * from recPrereq;
 
 # 6장 연습문제
 
-#### 6.1 Using the relations of the second running schema (bank schema), write SQL expressions to define the following views. Also determine if the view is updatable. Justify your answer.  
+#### 6.1
+Using the relations of the second running schema (bank schema), write SQL expressions to define the following views. Also determine if the view is updatable. Justify your answer.  
 
 (a) A view containing the account numbers and customer names for all accounts at the ‘Sangdo-dong’ branch. 
 
@@ -324,7 +325,9 @@ group by customerName);
 집계 연산을 사용하고 있기 때문에..  
 또한 group by절을 사용하고 있음  
 <br>
-#### 6.2. SQL allows a foreign key dependency to refer to the same relations, as in the following example: 
+
+#### 6.2. 
+SQL allows a foreign key dependency to refer to the same relations, as in the following example: 
 
 ```sql
 Create table myManager ( 
@@ -339,7 +342,8 @@ foreign key (managerName) references myManager on delete cascade);
 myManager를 참조하고 있는 tuple도 연속적으로 삭제된다.
 
 
-#### 6.3. Consider the relational schema 
+#### 6.3.
+Consider the relational schema 
 ```sql
 part(partID *, name, cost) 
 subpart(partID *, subpartID *, count) 
@@ -397,3 +401,5 @@ B: R의 select권한, 권한 부여 권한
 A: R의 모든 권한 + B로받은 Select 권한
 
 --> select 권한에 대해 사이클 생성됨
+
+# 7장 오라클 실습
