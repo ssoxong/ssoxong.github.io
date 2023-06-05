@@ -599,3 +599,109 @@ CGI는 프로세스마다 실행되어야 해서 오버헤드가 크지만, 자�
 서버에 사용자의 상태를 저장하지 않기 떄문에 서버 과부하가 줄어든다.  
 하지만 사용자가 접근할때마다 새롭게 연결해야하는 어려움이 있다.
 
+# 9장 SQL 확장
+상용 DB sys에서 SQL 확장 지원한다.  
+Oracle - PL/SQL
+
+## 외부 언어 프로시저
+
+```SQL
+create procedure deptcountproc
+    (in deptname varchar(20),
+    out count integer)
+language C
+external name '/usr/...';
+
+create procedure deptcountproc2
+(deptname varchar(20))
+returns integer
+language C
+external name '/ussr/...';
+```
+외부 언어를 사용하는 예시이다.  
+external name은 C 프로그램의 목적 코드
+
+
+이렇게 외부 언어로 함수/프로시저 개발하는 것의 문제점..
+- 데이터베이스 보안 이슈
+- 함수와 프로시저를 DBMS영역에 불러와 실행하게 되므로 오류에 취약
+- DBMS 서버가 사용자에 의해 스탑되지 않아야함
+- 사용자 프로그램 오류가 DB의 오류로 될 수 있음
+<br>
+장점
+- 효율적
+- 전체적인 성능 향상
+<br>
+
+보안 이슈 없애기
+- 안전 언어 (자바, c#) 사용
+- 샌드박스 - 외부언어가 자신의 메모리에 접근하는 것은 허용하지만 실행 프로세스 메모리나 파일 세스템은 불가 -> 안전함
+- IPC 이용
+
+## Stored procedure
+프로그램 모듈을 저장해서 DB 필요할때 호출   
+-> 하나의 오브젝트로  DBMS 저장
+
+- 캡슐화
+- call만 하면 되기에 별다른 네트워킹 감소
+
+## SQL 함수
+
+```SQL
+create function profc(deptname varchar(20)) returns integer
+begin
+    declare pcount integer;
+    select count(*) into pcount
+    from professor
+    where professor.deptname = profc.deptname
+    return pcount;
+end;
+
+select deptname, budget
+from department
+where profc(deptname) >5;
+```
+
+입력으로 주어지는 학과의 교수 수를 반환하는 함수와 호출하는 예시
+
+## SQL 프로시저
+SQL 함수와는 다르게 인자에 대해 입력 및 출력 명시, 출력 인자가 2개 이상이어도 가능 (함수는 불가)  
+오버로딩 가능
+
+- 프로시저 생성자
+while, loop, repeat, 조건문 여러 문법 가능  
+예외 처리 가능  
+
+### Function Exercise
+정원 내에서 학생을 과목에 수강 신청하는 연산 수행하는 함수  
+
+```SQL
+create function myregistersut(
+    mysid char(5),
+    mycid char(5),
+    mysemester char(10),
+    myyear numeric(4,0)
+)
+returns integer
+begin 
+    declare currenrolment int;
+    select count(*) into currenrolment from takes
+    where cid = mycid
+    and semester = mysemester
+    and year = myyear;
+
+    declare limit int;
+    select capacity into limit from room, teaches
+    where classroom=roomid
+    and cid=mycid
+    and semester=mysemester
+    and year=myyear;
+
+    if(currenrolment<limit)
+    begin
+        insert into takes values (mysid, mycid, mysemester, myyear, null);
+        return (0);
+    end
+    return (-1);
+end
+```
