@@ -136,9 +136,151 @@ end
 3. employee 관계의 salary 속성에 변경이 발생하면, department의 totalsalary를 변경한다.
 
 ```sql
+Create trigger myTotalSalary after update of salary on employee
+referenceing new row as nrow
+referencing old row as orow
+for each row
+-- 봉급 바뀐 사람의 현재 봉급이 null이 아니면
+when(nrow.dNumber is not null)
+Update department
+-- 부서의 총 봉급에 예전 봉급 빼고 새 봉급을 더한다
+    set totalSalary = totlaSalary + nrow.salary-orow.salary
+    where dno = nrow.dNumber;
+```
+
+4. 트리거는 이벤트 전에 수행될 수 있다.
+```sql
+Create trigger mySetNull before update on takes
+referencing new row as nrow
+for each row
+when(nrow.grade ='')
+Update takes set nrow.grade = null;
+```
+테이블 갱신 전, grade에 값은 존재하지만 해당 값이 공백인 경우 null로 지정해준다.
+
+5. 문장 수준 트리거
+employee 관계의 salary 속성에 변경이 발생하면, department의 totalsalary를 변경한다.
+
+```sql
+Create trigger myTotalSalaryState after update of salary on employee
+referenceing new table as N
+referencing old table as O
+-- 문장 단위로 수행
+for each statement
+-- 봉급 바뀐 사람의 전/후 봉급이 하나라도 null이 아닌 경우
+when exists
+    (select * from N where N.dnumber is not null)
+    or (select * from O where O.dnumber is not null)
+-- 부서 총봉급 수정
+Update department as D
+set D.totalSalary = D.totalSalary
+    + (select sum(N.salary) from N where D.dno = N.dnumber)
+    - (select sum(O.salary) from O where D.dno = O.dnumber)
+where D.dno in ((select dnumber from N)
+                union
+                (select dnumber from O));
+```
+테이블 단위로 관리하고 계산한다.
+
+### Trigger 사용 comment
+1. 객체지향 언어에서는 트리거를 구현하지 않고 메소드 형식으로 캡슐화 할 수도 있다.
+2. cascade(전파) 주의 요망
+3. 트리거는 속성의 통계 정보를 유지하거나 임의 테이블의 복사본을 유지할떄 사용하였으나, 요즘은 트리거 대신 뷰를 제공하며 테이블 복제 기능도 제공한다.
+
 
 
 ## Authorization
+- 권한
+1. instance
+    read, insert, update, delete
+2. schema
+    index(create, delete), resource(create new relation), alter, drop
+
+- SQL 언어로 부여할 수 있는 권한  
+select, insert, update, delete, reference, usuage, all privillege  
+refenrence - 참조할 권한
+usuage - 도메인 쓸 수 있는 권한
+
+- 권한 부여
+
+```sql
+Grant <권한 list> on (table/view) to <user list> [with grant option]
+```
+
+with grant option이용시 권한 부여받은 사람이 다시 권한을 부여할 수 있다.
+
+- 권한 철회
+```sql
+Revoke <권한 list> on (table/view) from to <user list> [restricted | cascade]
+```
+cascade: 해당 사용자가 다른 사용자에게까지 권한 부여했다면 그 사용자의 권한까지 철회  
+restricted: cascade 발생시 권한 철회하지 않음  
+
+- 권한 부여하는 권한 철회 가능
+```sql
+Revoke grant option on ...
+```
+
+- 권한 그래프
+모든 권한의 뿌리는 DBA  
+
+### 뷰 권한
+뷰는 최소한 베이스 테이블에 읽기 권한이 있어야 생성 가능하다  
+뷰 권한은 베이스 테이블 권한을 넘어서지 못한다.
+뷰 생성자는 테이블 생성자와 다르게 resource 권한을 가지지 않아도 된다.
+일반 테이블 생성자는 테이블에 대한 모든 권한을 가지지만 뷰 생성자는 아니다.
+뷰를 생성했기 때문에 select 권한은 무조건 가지고, 나머지 권한은 베이스 테이블 권한에 따른다.
+
+#### 뷰 권한 예제
+1. 교수자가 2015 가을 학기에 강의하는 과목 접근은 가능하지만 교수 봉급은 접근하지 못한다. 
+``` sql
+Create view myTeach as
+select name, title
+from professor, teaches, course
+where teaches.pID = professor.pID and course.cID = teaches.cID
+and semester = 'Fall' and year=2015;
+```
+- 뷰 사용자로부터 professor의 salary를 숨겨 접근하지 못하게 한다.
+
+2. 스태프가 professor 테이블에 대한 읽기 권한이 없어도 뷰에 대한 읽기 권한만 가지고 CSProfessor 뷰를 접근할 수 있다.
+```sql
+user)
+Create view CSProfessor as
+(select * from professor where deptName = 'CS');
+Grant select on CSProfessor to staff;
+staff)
+Select * from CSProfessor;
+```
+staff가 professor에 대한 권한이 없어도 CSProfessor를 통해 professor 테이블에 접근할 수 있는 형식이다.
+
+### Role
+사용자의 집합  
+Role에게 권한을 부여할 수 있다.  
+```sql
+create role teller;
+grant select on branch to teller;
+grant update(balance) on account to teller;
+-- role 만들어서 권한 부여
+
+create role manager;
+grant teller to manager;
+-- //role의 권한 또다른 role에 그대로 부여
+```
+
+- 권한 한계
+1. tuple 단위로 권한 부여 불가
+2. 앱은 가능하다
+
 ## Recursive Queries
+자신의 뷰로 또다른 뷰 만들기  
+선/후수 과목에 사용한다  
+```sql
+With recursive recPrereq(courseID, prereqID)
+as (select courseID, prereqID from prereq)
+union
+(select recPrereq.courseID, prereq.prereqID
+from recPrereq, prereq
+where recPrereq.prereqID = prereq.courseID)
 
-
+select * from recPrereq;
+```
