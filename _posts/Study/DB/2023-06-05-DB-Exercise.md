@@ -402,6 +402,7 @@ A: R의 모든 권한 + B로받은 Select 권한
 
 --> select 권한에 대해 사이클 생성됨
 
+
 # 7장 오라클 실습
 
 - LOB 데이터 타입
@@ -456,6 +457,25 @@ deptname이 SW가 아닌 경우 insert 불가
     - base table의 최신 반영 어려움(옵션으로 갱신)
     - 베이스가 바뀌면 view는 old data
     - up-to-date 필요없는 뷰에 사용
+
+## ROWNUM
+오라클이 지원하는 기능, ranking과 비슷함.  
+숫자 1부터 시작하는 pseudo-column
+1. where clause를 통과한 튜플에 대해 부여된다.
+2. 특정 튜플에 배정된 이후 그 값이 하나 증가한다
+
+```sql
+-- 무작위 5명
+select * from student where rownum <=5;
+-- 무작위 5명
+select * from student where rownum<=5 order by gpa;
+-- 상위 5
+select *
+from (select * from student order by gpa desc)
+where rownum<=5;
+-- 아무것도 리턴하지 않음
+select * from student where rownum>1;
+```
 
 # 7장 연습문제
 
@@ -554,3 +574,28 @@ SQLstatement = "SELECT * FROM users WHERE name = '"+username+"';"
     임베디드 SQL도 전처리기에 의해 API call로 변환됨
 
 ## 8.3 응용 구조
+
+|Two-tier architecture|Three-tier architecture|
+|---|---|
+|client|client|
+|users<br>applications|users<br>application clients|
+|network|network|
+|server|server|
+database sys| application server <br> database sys|
+
+- cookies
+HTTP의 Stateless Connection이라는 Web의 특징을 보완하기 위해 사용한다.  
+쿠키로 사용자의 행동을 저장하는 형식
+
+# 8장 연습문제
+## 8.1
+- Why servlets give better performance than CGI programs, even though Java programs generally run slower than C/C++ programs? 
+
+CGI는 프로세스마다 실행되어야 해서 오버헤드가 크지만, 자바의 서블렛은 스레드를 실행해 적다.
+
+## 8.2
+- List some benefits and drawbacks of connectionless protocols over the protocols that maintain connections. 
+
+서버에 사용자의 상태를 저장하지 않기 떄문에 서버 과부하가 줄어든다.  
+하지만 사용자가 접근할때마다 새롭게 연결해야하는 어려움이 있다.
+
