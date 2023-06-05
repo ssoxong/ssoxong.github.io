@@ -7,8 +7,8 @@ categories:
 tags:
   - [Data Base]
 
-toc: true
-toc_sticky: true
+# toc: true
+# toc_sticky: true
 
 date: 2023-06-05
 last_modified_at: 2023-06-05
