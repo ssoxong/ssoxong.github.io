@@ -403,3 +403,154 @@ A: R의 모든 권한 + B로받은 Select 권한
 --> select 권한에 대해 사이클 생성됨
 
 # 7장 오라클 실습
+
+- LOB 데이터 타입
+대용량 데이터를 저장/관리하기 위해 사용  
+BLOB, CLOB, NCLOB, BFILE  
+
+- 집합 연산
+오라클에서는 union all만 지원
+
+## 여러 함수..
+- 문자 처리
+lower()  
+Instr()  
+Replace()  
+Substr()
+<br>
+
+- 숫자형 처리
+Round: 반올림  
+Trunc: 절삭  
+Sign: 양/음/0  
+<br>
+
+- 날자형 처리 함수
+sysdate
+<br>
+
+- 형 변환
+TO_CHAR  
+TO_NUMBER
+
+## 뷰
+```sql
+Create [or replace] [force|noforce] view view_name
+as subquery
+[with check option]
+[with read only]
+```
+force: 베이스 테이블 없어도 생성  
+with read only: 뷰 검색만 가능하고, 뷰를 통한 베이스테이블 변경 불가  
+
+```sql
+Create view myview as 
+select * from professor where deptName='SW’' 
+with check option; 
+```
+deptname이 SW가 아닌 경우 insert 불가
+
+- 실체화된 뷰 (materialize view)
+터플을 가질 수 있는 뷰
+    - 빠른 질의 응답
+    - base table의 최신 반영 어려움(옵션으로 갱신)
+    - 베이스가 바뀌면 view는 old data
+    - up-to-date 필요없는 뷰에 사용
+
+# 7장 연습문제
+
+- Make each of the below 
+    - A trigger (with "referencing" and “when")   
+    - An updatable view 
+    - A view with check option 
+- Run at least 10 SQL statements including 
+    - nested subqueries (use some/any/all) 
+    - correlated subqueries 
+    - ranking queries 
+    - SQLs that show the effect of the trigger, view, view with check option 
+
+# 8장 응용 개발
+DB 어플리케이션
+- static approach  
+    SQL을 프로그램에 임베딩하는 형태
+- dynamic approache
+    API 호출 후 함수 호출
+
+## 8.1 Embeded SQL
+1. 프로그래밍 언어 안에 SQL을 임베딩
+2. preprocessor가 임베디드 sql을 api 호출로 변경한다
+
+### Cursor
+프로그래밍 언어와 DB언어 SQL은 방식이 달라서 맞춰야 한다.  
+일반 프로그램 변수에는 집합을 지원하지 않는다.
+
+--> c++ STL에서 컨테이너 타입으로 set, multiset 지원한다.
+
+1. 커서 declare 
+2. open: db에 질의 수행
+3. 질의 결과를 임시 테이블에 저장
+4. fetch를 통해 임시 테이블에서 터플을 하나씩 프로그램으로 전달한다.
+5. SQLCA=02000
+6. 커서 close
+
+- SQLCA = 00000: 성공 / 02000: 더이상 검색되는 터플 없음
+
+```sql
+-- 1. declare
+EXEC SQL DECLARE demoCursor cursor for
+select first, last
+where :lname < 'C';
+
+-- 2. open --> 쿼리 수행
+EXEC SQL OPEN democursor;
+
+for(;;){
+    -- 3. fetch로 튜플 단위로 불러오기
+    EXEC SQL fetch democursor into :fname, :lname;
+    if (strcmp(SQLSTATE, "00000", 5)!=0) break;
+    printf("%s %s\n",fname, lname);
+}
+-- 더이상 불러올 값이 없으면
+if(strcmp(SQLSTATE, "02", 2)!=0)
+    printf("SQLSTATE after fetch is %S\n", SQLSTATE);
+-- 4. close
+EXEC SQL close democursor;
+```
+
+- 커서를 통한 데이터 갱신
+for update 옵션을 이용해서 커서로 DB 업데이트 가능
+
+### 동적 SQL
+프로그램 실행 시간에 SQL 문장이 생성된다.  
+prepare, execute 과정이 필요하다  
+프로그램과 DB 서버를 연결하는 API: **ODBC, JDBC**
+
+### 정적 SQL
+DB의 전처리 단계에 문장 구문 검사, 권한 검사, 질의 실행 코드 생성 등 가능하다
+
+동적이 정적보다 늦지만, 사용자에게 질의문 작성에 대한 융통성을 제공한다. 
+
+## 8.2 ODBC, JDBC
+1. SQLEXECDIRECT
+2. SQLFETCH
+3. SQLBINDCOL
+
+- 기본적으로 동적 SQL을 지원한다.
+```sql
+SQLstatement = "SELECT * FROM users WHERE name = '"+username+"';"
+```
+
+- JDBC: 자바에서 제공하는 ODBC
+<br>
+
+- static
+    임베이드 SQL, SQLJ  
+    전처리가 필요하며 전처리 과정에서 구문검사, 권한 검사 등 가능하며 신속하게 수행할 수 있다.  
+    실행 코드 작성시 두단계 거쳐야함
+<br>
+- dynamic 
+    API call  
+    ODBC, JDBC  
+    임베디드 SQL도 전처리기에 의해 API call로 변환됨
+
+## 8.3 응용 구조
