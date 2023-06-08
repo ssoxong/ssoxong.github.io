@@ -1,18 +1,3 @@
----
-title: "PL 정리 - 기말고사"
-excerpt: "PL"
-
-categories:
-    - PL
-tags:
-  - [PL]
-
-toc: true
-toc_sticky: true
- 
-date: 2023-06-07
-last_modified_at: 2023-06-07
----
 
 PL 기말고사
 범위: 8, 9, 10, 13, 14, 15, 16
