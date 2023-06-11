@@ -29,6 +29,7 @@ last_modified_at: 2023-06-11
 </details>
 
 1. SSL 초기화
+
 ```c
 /*OpenSSL 사용 전 초기화*/
 SSL_library_init();
@@ -41,6 +42,7 @@ SSL_load_error_strings();
 ```
 
 2. SSL context 만들어서 TLS 선언
+
 ```c
 //SSL Conetxt 만들기 - 암호화키, 인증키 저장 후 connection동안 유지
 //SSL_CTX_new 파라미터로 하나만 들어갈 수 있음
@@ -49,6 +51,7 @@ SSL_CTX *ctx = SSL_CTX_new(TLS_client_method());
 ```
 
 3. TCP connection 후, TLS connection 연결
+
 ```c
 /*initiate TLS connection*/
 //SSL object 생성
@@ -78,12 +81,14 @@ if (SSL_connect(ssl) == -1) {
 ```
 
 4. 읽기 / 쓰기
+
 ```c
 SSL_write()
 SSL_read()
 ```
 
 5. 할당 해제
+
 ```c
 //연결 끊기
 SSL_shutdown(ssl);
@@ -94,11 +99,13 @@ SSL_CTX_free(ctx);
 ```
 
 6. 사용한 알고리즘 리스트
+
 ```c
 SSL_get_cipher(ssl);
 ```
 
 7. Cipher and Certificate
+
 ```c
 //접속한 서버의 인증서 가져오기
 X509 *cert = SSL_get_peer_certificate(ssl);
@@ -123,6 +130,7 @@ X509_free(cert);
 ```
 
 8. complie
+
 ```bash
 gcc https_simple.c -o https_simple -lssl -lcrypto
 ```
