@@ -53,4 +53,14 @@ sidebar-category:
       - title: "BOJ"
         url:  "/categories/boj"
         category: "BOJ"
+
+  - title: "Blog"
+    children:
+      - title: "Blog"
+        url: "/categories/blog"
+        category: "Blog"
+
+      - title: "Daily"
+        url:  "/categories/daily"
+        category: "Daily"
         
