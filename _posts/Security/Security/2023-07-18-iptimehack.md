@@ -10,8 +10,6 @@ tags:
 toc: true
 toc_sticky: true
 
-use_math: true
-
 date: 2023-07-18
 ---
 
@@ -40,13 +38,14 @@ date: 2023-07-18
 -A|해당 펌웨어에 사용된 아키텍처를 알 수 있다.
 
 ## 진행 과정
-#### 1. 펌웨어 다운
+
+### 1. 펌웨어 다운
 
 ```bash
 wget http://download.iptime.co.kr/online_upgrade/n604se_ml_14_208.bin
 ```
 
-#### 2. 바이너리 파일 (.bin) 추출
+### 2. 바이너리 파일 (.bin) 추출
 
 ```bash
 binwalk -e n604se_ml_14_208.bin
@@ -68,7 +67,7 @@ binwalk -e n604se_ml_14_208.bin
 엔디안과 사이즈 제외, 별로 얻을 수 있는 정보가 없다.  
 해당 게시글에서는 qemu를 가상환경으로 돌려서 분석하지 않을 거지만, 해당 방법으로 하실 분들은 endian을 맞춰주는 것이 중요하다.
 
-- 40
+- 40  
 ![image](https://github.com/ssoxong/add-nbo/assets/112956015/cfbd2a64-8a01-451c-ac4e-f6c6c458996d)
 
 리눅스 커널 버전을 알 수 있다!  
@@ -109,7 +108,7 @@ sudo cp -r ./default/* ./tmp/
 분석을 실행하며 이것저것 건들기 떄문에 tmp폴더를 새로 생성하여 복사해준다.  
 하지만 굳이 필요한 동작은 아닌듯..?
 
-#### 3. Shell 실행
+### 3. Shell 실행
 
 squashfs-root 디렉토리 경로에서 해당 명렁어를 실행한다. 
 
@@ -126,7 +125,7 @@ chroot - change root
 qemu가 설치되어있는 경로를 지정해주면 된다. 
 
 
-#### 4. 이것저것 뜯어보기
+### 4. 이것저것 뜯어보기
 - 관리자 ID/PW
 - 
 ![image](https://github.com/ssoxong/add-nbo/assets/112956015/3f5b9731-da0f-4566-8d2d-74c37affad1e)
@@ -135,7 +134,13 @@ default/etc 폴더에 passwd.ated를 통해 확인할 수 있다.
 
 ID와 PW 또한 리눅스 구조로 저장되어있다.   
 
-| 아이디:해시 알고리즘 번호, salt값, 해시값
+| 아이디:\$해시 알고리즘 번호\$salt값\$비밀번호 해시값  
+
+추가적으로 설명을 덧붙이자면, 비밀번호 그대로를 해시하면 취약한 암호의 경우 바로 알 수 있기에 랜덤한 값을 비밀번호에 salt값을 추가하는 것이다.  
+
+Hash(pw) -> Hash(pw+salt) 형태!
+
+이렇게 하면 해시 최종 원본은 랜덤값이 되기 때문에 안전해진다.
 
 번호 1은 MD5를 뜻한다.  
 해시알고리즘은 해시값을 보고 원문을 거의 알 수 없다는 특징을 가지지만, MD5는 충돌성이 발견되어 취약하기에 일부 가능하다.  
@@ -146,7 +151,7 @@ ID와 PW 또한 리눅스 구조로 저장되어있다.
 
 사진은 따로 첨부하지 않겠지만 예상 가능한 그거다..
 
-#### 5. Login GUI 구동
+### 5. Login GUI 구동
 
 ```bash
 ./sbin/httpd
@@ -183,6 +188,7 @@ ps-ef | grep "httpd"
 
 더 확실하게 알 수 있는 방법은 ipTIME 옆의 버전을 확인하는 것이다.  
 해당 게시글에서는 N604SE 모델의 펌웨어를 사용하였으므로, 정상적으로 나오는 것이다!
+
 
 ## 그 외 내가 만난 오류..
 - illegal instruction  
