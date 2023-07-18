@@ -68,6 +68,7 @@ binwalk -e n604se_ml_14_208.bin
 해당 게시글에서는 qemu를 가상환경으로 돌려서 분석하지 않을 거지만, 해당 방법으로 하실 분들은 endian을 맞춰주는 것이 중요하다.
 
 - 40  
+
 ![image](https://github.com/ssoxong/add-nbo/assets/112956015/cfbd2a64-8a01-451c-ac4e-f6c6c458996d)
 
 리눅스 커널 버전을 알 수 있다!  
@@ -126,15 +127,15 @@ qemu가 설치되어있는 경로를 지정해주면 된다.
 
 
 ### 4. 이것저것 뜯어보기
-- 관리자 ID/PW
-- 
+- 관리자 ID/PW  
+
 ![image](https://github.com/ssoxong/add-nbo/assets/112956015/3f5b9731-da0f-4566-8d2d-74c37affad1e)
 
 default/etc 폴더에 passwd.ated를 통해 확인할 수 있다.  
 
 ID와 PW 또한 리눅스 구조로 저장되어있다.   
 
-| 아이디:\$해시 알고리즘 번호\$salt값\$비밀번호 해시값  
+> 아이디:\$해시 알고리즘 번호\$salt값\$비밀번호 해시값  
 
 추가적으로 설명을 덧붙이자면, 비밀번호 그대로를 해시하면 취약한 암호의 경우 바로 알 수 있기에 랜덤한 값을 비밀번호에 salt값을 추가하는 것이다.  
 
