@@ -63,4 +63,16 @@ sidebar-category:
       - title: "Daily"
         url:  "/categories/daily"
         category: "Daily"
+
+   - title: "Develop"
+    children:
+      - title: "React"
+        url: "/categories/react"
+        category: "React"
+
+      - title: "Spring"
+        url:  "/categories/spring"
+        category: "Spring"
+
+        
         
