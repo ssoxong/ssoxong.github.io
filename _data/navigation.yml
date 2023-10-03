@@ -2,8 +2,8 @@
 main:
 # main links
 main:
-  #- title: "Home"
-  #  url: "/"
+  - title: "Home"
+   url: "/"
   - title: "Introduce"
     url: /about/
   - title: "Category"
