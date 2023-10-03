@@ -10,7 +10,7 @@ main:
     url: /tags/
 
 sidebar-category:
-   - title: "Develop"
+  - title: "Develop"
     children:
       - title: "React"
         url: "/categories/react"
