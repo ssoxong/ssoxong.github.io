@@ -12,6 +12,16 @@ main:
     url: /tags/
 
 sidebar-category:
+   - title: "Develop"
+    children:
+      - title: "React"
+        url: "/categories/react"
+        category: "React"
+
+      - title: "Spring"
+        url:  "/categories/spring"
+        category: "Spring"
+
   - title: "Study"
     children:
       - title: "Data Base"
@@ -64,15 +74,7 @@ sidebar-category:
         url:  "/categories/daily"
         category: "Daily"
 
-   - title: "Develop"
-    children:
-      - title: "React"
-        url: "/categories/react"
-        category: "React"
 
-      - title: "Spring"
-        url:  "/categories/spring"
-        category: "Spring"
 
         
         
