@@ -1,9 +1,7 @@
 # main links
 main:
-# main links
-main:
-  - title: "Home"
-   url: "/"
+  # - title: "Home"
+  #  url: "/"
   - title: "Introduce"
     url: /about/
   - title: "Category"
@@ -73,8 +71,3 @@ sidebar-category:
       - title: "Daily"
         url:  "/categories/daily"
         category: "Daily"
-
-
-
-        
-        
