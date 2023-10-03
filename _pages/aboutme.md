@@ -33,12 +33,7 @@ Blog | [https://ssoxong.github.io/](https://ssoxong.github.io/)
 개발 - JavaScript(Next.js), Java(Spring)
 
 ## ⏳ 타임 스탬프
----
-
-> 2023
-> 
-- 숭실대학교 SW 분야 정보보호 튜터 (2023.03 ~ ing)
-- 이공계 국가 우수 장학생 (2023.05 ~ ing)
+--기
 
 > 2022
 > 
