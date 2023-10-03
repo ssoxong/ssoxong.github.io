@@ -1,0 +1,66 @@
+---
+title: "[Spring Boot] REST API"
+excerpt: "spring boot"
+published: true
+
+categories:
+    - Spring
+tags:
+  - [Develop, Spring Boot]
+
+toc: true
+toc_sticky: true
+   
+date: 2023-10-03
+---
+
+# API
+Application Programming Interface
+
+API를 사용하면 내부 구현 로직은 알지 못해도 정의되어있는 기능을 사용할 수 있다.
+
+# REST
+Representational State Transfer  
+
+자원의 이름으로 구분하여 자원의 상태룰 교환.  
+서버와 클라이언트가 독립적으로 존재하며, 그 사이에서 통신하는 것.  
+HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 자원을 교환하는 것.  
+HTTP Method: Create, Read, Update, Delete
+
+## 특징
+
+- 독립된 Server-Client 구조  
+자원을 가진 쪽이 서버, 요청하는 쪽이 Client
+
+- Stateless  
+요청은 각각 별개의 것으로 인식하며, 요청시 클라이언트 정보가 서버에 저장되지 않는다.
+
+- Cacheable  
+HTTP 프로토콜을 그대로 사용하기에 HTTP의 특징인 캐싱 기능을 적용한다. 
+
+## 장점
+HTTP 표준 프로토콜을 사용하는 모든 플랫폼에서 호환 가능  
+서버와 클라이언트 명확하게 분리 (독립적)
+
+## 설계 규칙
+- URI를 통해 자원을 표현해야 한다.  
+https://github.io/member/1234  
+Resource: member
+Resource id: 1234
+
+- 자원 조작은 HTTP Method(CRUD)를 통해 표현
+
+- 메세지를 통한 리소스 조작  
+Header를 통해 content-type을 지정해 데이터 전달.  
+html, xml, json, text.. 등
+
+- URI에 소문자 사용, 언더바 아닌 하이픈 표현
+
+- 파일 확장자를 표현하지 않음
+
+----
+
+# 참고
+[유튜브] 어라운드 허브 스튜디오  
+https://www.youtube.com/watch?v=lceS3HbGXt4&list=PLlTylS8uB2fBOi6uzvMpojFrNe7sRmlzU&index=4
+
