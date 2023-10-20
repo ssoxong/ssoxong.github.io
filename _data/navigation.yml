@@ -71,3 +71,9 @@ sidebar-category:
       - title: "Daily"
         url:  "/categories/daily"
         category: "Daily"
+
+  - title: "Cloud"
+    children:
+      - title: "Cloud"
+        url: "/categories/cloud"
+        category: "Cloud"
