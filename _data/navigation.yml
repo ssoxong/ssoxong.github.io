@@ -74,6 +74,6 @@ sidebar-category:
 
   - title: "Cloud"
     children:
-      - title: "Cloud"
-        url: "/categories/cloud"
-        category: "Cloud"
+      - title: "AWS"
+        url: "/categories/aws"
+        category: "AWS"
