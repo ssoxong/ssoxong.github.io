@@ -2,7 +2,7 @@
 title: "Programmers - 신규 아이디 추천"
 excerpt: "Programmers post"
 categories:
-    - Programmers
+    - Algorithm
 tags:
   - [Programmers, Algorithm]
 toc: true

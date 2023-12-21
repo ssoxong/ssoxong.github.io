@@ -3,7 +3,7 @@ title: "Programmers - 이진 변환 반복하기"
 excerpt: "Programmers post"
 
 categories:
-    - Programmers
+    - Algorithm
 tags:
   - [Programmers, Algorithm]
 toc: true

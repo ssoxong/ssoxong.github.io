@@ -3,7 +3,7 @@ title: "Programmers - 핸드폰 번호 가리기"
 excerpt: "Programmers post"
 
 categories:
-- Programmers
+- Algorithm
 tags:
   - [Programmers, Algorithm]
 toc: true

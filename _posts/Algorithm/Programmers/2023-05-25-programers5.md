@@ -3,7 +3,7 @@ title: "Programmers - 암호 해독"
 excerpt: "Programmers post"
 
 categories:
-    - Programmers
+    - Algorithm
 tags:
   - [Programmers, Algorithm]
 toc: true

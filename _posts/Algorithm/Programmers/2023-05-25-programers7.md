@@ -3,7 +3,7 @@ title: "Programmers - 짝지어 제거하기"
 excerpt: "Programmers post"
 
 categories:
-    - Programmers
+    - Algorithm
 tags:
   - [Programmers, Algorithm]
 toc: true
