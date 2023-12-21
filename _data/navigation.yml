@@ -1,79 +1,28 @@
 # main links
 main:
-  # - title: "Home"
-  #  url: "/"
-  - title: "Introduce"
+  - title: "Home"
+    url: https://choiiis.github.io/
+
+  - title: "About"
     url: /about/
-  - title: "Category"
-    url: "/categories/"
-  - title: "Tags"
-    url: /tags/
 
-sidebar-category:
-  - title: "Develop"
-    children:
-      - title: "React"
-        url: "/categories/react"
-        category: "React"
+  - title: "GitHub"
+    url: https://github.com/choiiis
 
-      - title: "Spring"
-        url:  "/categories/spring"
-        category: "Spring"
+  # - title: "Projects"
+  #   url: /projects/
 
-  - title: "Study"
-    children:
-      - title: "Data Base"
-        url: "/categories/db"
-        category: "DB"
+  # - title: "Categories"
+  #   url: /categories/
 
-      - title: "Programming Language"
-        url:  "/categories/pl"
-        category: "PL"
-
-      - title: "Network Programming"
-        url:  "/categories/np"
-        category: "NetworkProgramming"
-
-      - title: "System Programming"
-        url:  "/categories/sysprog"
-        category: "SystemProgramming"
-
-      - title: "ETC" 
-        url:  "/categories/etc"
-        category: "etc"
-
-  - title: "Security"
-    children:
-      - title: "Tutoring"
-        url: "/categories/tutoring"
-        category: "Tutoring"
-
-      - title: "Security Study"
-        url:  "/categories/security"
-        category: "Security"
-
-  - title: "Algorithm"
-    children:
-      - title: "Programmers"
-        url: "/categories/programmers"
-        category: "Programmers"
-
-      - title: "BOJ"
-        url:  "/categories/boj"
-        category: "BOJ"
-
-  - title: "Blog"
-    children:
-      - title: "Blog"
-        url: "/categories/blog"
-        category: "Blog"
-
-      - title: "Daily"
-        url:  "/categories/daily"
-        category: "Daily"
-
-  - title: "Cloud"
-    children:
-      - title: "AWS"
-        url: "/categories/aws"
-        category: "AWS"
+# sidebar navigation (categories)
+# 2022.02.15 sidebar update : simple ver.
+categories:
+  - title: "Categories1"
+    url: /categories/categories1/
+  - title: "Categories2"
+    url: /categories/categories2/
+  - title: "Categories3"
+    url: /categories/categories3/
+  - title: "Categories4"
+    url: /categories/categories4/
