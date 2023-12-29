@@ -3,7 +3,7 @@ title: "Programmers - 개인정보 수집 유효기간"
 excerpt: "Programmers post"
 
 categories:
-    - Algorithm
+    - Programmers
 tags:
   - [Programmers, Algorithm]
 

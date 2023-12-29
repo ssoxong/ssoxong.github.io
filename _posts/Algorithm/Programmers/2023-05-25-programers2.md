@@ -3,7 +3,7 @@ title: "Programmers - 다음에 올 숫자"
 excerpt: "Programmers post"
 
 categories:
-    - Algorithm
+    - Programmers
 tags:
   - [Programmers, Algorithm]
 

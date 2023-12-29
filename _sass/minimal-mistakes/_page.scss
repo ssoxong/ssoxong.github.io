@@ -143,13 +143,13 @@ body {
 
   dt {
     margin-top: 1em;
-    font-family: $sans-serif;
+    font-family: $noto-sans-kr;
     font-weight: bold;
   }
 
   dd {
     margin-left: 1em;
-    font-family: $sans-serif;
+    font-family: $noto-sans-kr;
     font-size: $type-size-6;
   }
 
@@ -293,7 +293,7 @@ body {
 .page__meta {
   margin-top: 2em;
   color: $muted-text-color;
-  font-family: $sans-serif;
+  font-family: $noto-sans-kr;
   font-size: $type-size-6;
 
   p {

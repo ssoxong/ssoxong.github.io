@@ -3,7 +3,7 @@ title: "Programmers - 숫자 짝꿍"
 excerpt: "Programmers post"
 
 categories:
-    - Algorithm
+    - Programmers
 tags:
   - [Programmers, Algorithm]
 toc: true

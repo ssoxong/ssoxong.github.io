@@ -15,15 +15,17 @@ $indent-var: 0.7lem !default;
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
 /* 2022.01.19 font change */
-$sans-serif: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "Pretendard", "Merriweather", sans-serif !default;
+$noto-sans-kr: 'Noto Sans KR', sans-serif !default;
+// $sans-serif: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "Pretendard", "Merriweather", sans-serif !default;
 $monospace: "Fira Mono", "Pretendard", Monaco, Consolas, "Lucida Console", monospace !default;
 
 
 /* sans serif typefaces */
-$sans-serif-narrow: $sans-serif !default;
-$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
-$menufont: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "BioRhyme", "Pretendard", sans-serif !default;
-
+$noto-sans-kr-narrow: $noto-sans-kr!default;
+// $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+$helvetica: "noto sans kr" !default;
+// $menufont: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "BioRhyme", "Pretendard", sans-serif !default;
+$menufont: -apple-system, "noto sans kr" !default;
 
 /* serif typefaces */
 $georgia: Georgia, serif !default;
@@ -35,9 +37,9 @@ $lobster: 'Lobster', cursive !default;
 $biorhyme: 'BioRhyme', serif !default;
 $creteround: 'Crete Round', serif !default;
 
-$global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
-$caption-font-family: $serif !default;
+$global-font-family: $noto-sans-kr!default;
+$header-font-family: $noto-sans-kr!default;
+$caption-font-family: $noto-sans-kr !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px

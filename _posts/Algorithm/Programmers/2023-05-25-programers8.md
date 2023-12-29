@@ -3,7 +3,7 @@ title: "Programmers - 합성수 찾기"
 excerpt: "Programmers post"
 
 categories:
-    - Algorithm
+    - Programmers
 tags:
   - [Programmers, Algorithm]
 toc: true

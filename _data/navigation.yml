@@ -21,11 +21,20 @@ categories:
   # - title: "Categories1"
   #   url: /categories/categories1/
   - title: "Algorithm"
-    url: /categories/algorithm/
+    children: 
+    - title: "Programmers"
+      url: /categories/programmers/
+
   - title: "Cloud"
     url: /categories/cloud/
+
   - title: "Develop"
-    url: /categories/develop/
+    children:
+    - title: "React"
+      url: /categories/react/
+    - title: "SpringBoot"
+      url: /categories/springboot/
+
   - title: "Security"
     url: /categories/security/
   - title: "Study"

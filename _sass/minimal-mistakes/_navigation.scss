@@ -12,7 +12,7 @@
   max-width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-  font-family: $sans-serif;
+  font-family: $noto-sans-kr;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.3s;
@@ -49,7 +49,36 @@
 /*
      Post pagination navigation links
      ========================================================================== */
-
+     .pagination_prev_next {
+      @include clearfix();
+      float: left;
+      width: 100%;
+    
+      /* next/previous buttons */
+      &--pager {
+        margin-top: 0em;
+        padding-top: 0em;
+        display: block;
+        padding: 1em 2em;
+        //float: left;
+        width: 100%;
+        font-family: $noto-sans-kr;
+        font-size: $type-size-6;
+      
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: $muted-text-color;
+        border: 1px solid mix(#000, $border-color, 25%);
+        border-radius: $border-radius;
+    
+        .prev_next {
+          font-family: $noto-sans-kr;
+          color:#112D4E;
+        }
+      }
+    }
+  
 .pagination {
   @include clearfix();
   float: left;
@@ -61,7 +90,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    font-family: $sans-serif;
+    font-family: $noto-sans-kr;
   }
 
   li {
@@ -73,7 +102,7 @@
       display: block;
       margin-bottom: 0.25em;
       padding: 0.5em 1em;
-      font-family: $sans-serif;
+      font-family: $noto-sans-kr;
       font-size: 14px;
       font-weight: normal;
       line-height: 1.5;
@@ -123,7 +152,7 @@
     padding: 1em 2em;
     float: left;
     width: 50%;
-    font-family: $sans-serif;
+    font-family: $noto-sans-kr;
     font-size: $type-size-5;
     font-weight: bold;
     text-align: center;
@@ -154,6 +183,7 @@
     }
   }
 }
+
 
 .page__content + .pagination,
 .page__meta + .pagination,
@@ -509,7 +539,7 @@
 .nav__title {
   margin: 0;
   padding: 0.25rem 0.1rem;
-  font-family: $sans-serif-narrow;
+  font-family: $noto-sans-kr-narrow;
   font-size: $type-size-5;
   font-weight: bold;
 }
@@ -528,7 +558,7 @@
      ========================================================================== */
 
 .toc {
-  font-family: $sans-serif-narrow;
+  font-family: $noto-sans-kr-narrow;
   color: $text-color;
   background-color:$background-color;
   border-radius: $border-radius;
