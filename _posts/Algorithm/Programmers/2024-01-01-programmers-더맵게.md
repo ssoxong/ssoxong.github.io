@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스][파이썬] 더 맵게"
-
+excerpt: "Programmers 더 맵게"
 categories:
     - Programmers
 tags:
