@@ -3,7 +3,7 @@ title: "[데이터베이스] ER Diagram"
 excerpt: "Data Base post"
 
 categories:
-    - DB
+    - Study
 tags:
   - [Data Base]
 
