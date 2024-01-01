@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 신규 아이디 추천"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 신규 아이디 추천"
+excerpt: "Programmers 신규 아이디 추천"
 categories:
     - Programmers
 tags:

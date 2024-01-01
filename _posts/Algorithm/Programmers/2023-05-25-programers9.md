@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 핸드폰 번호 가리기"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 핸드폰 번호 가리기"
+excerpt: "Programmers 핸드폰 번호 가리기"
 
 categories:
     - Programmers

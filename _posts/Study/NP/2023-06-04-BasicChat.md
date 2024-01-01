@@ -1,5 +1,5 @@
 ---
-title: "Network Programming - Basic Chatting App"
+title: "[네트워크 프로그래밍] Basic Chatting App"
 excerpt: "NP post"
 
 categories:

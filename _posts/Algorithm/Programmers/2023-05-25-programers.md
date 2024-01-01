@@ -1,7 +1,6 @@
 ---
-title: "Programmers - 개인정보 수집 유효기간"
-excerpt: "Programmers post"
-
+title: "[프로그래머스][자바] 개인정보 수집 유효기간"
+excerpt: "Programmers 개인정보 수집 유효기간"
 categories:
     - Programmers
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "Network Programming - Multi Thread & Multiplexing"
+title: "[네트워크 프로그래밍] Multi Thread & Multiplexing"
 excerpt: "NP post"
 
 categories:

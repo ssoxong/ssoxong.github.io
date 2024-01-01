@@ -1,5 +1,5 @@
 ---
-title: "2023-1 SW Tutoring - 개체 인증"
+title: "[정보보안] 개체 인증"
 excerpt: "Tutoring Post"
 
 categories:

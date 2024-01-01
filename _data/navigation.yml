@@ -34,9 +34,15 @@ categories:
       url: /categories/react/
     - title: "SpringBoot"
       url: /categories/springboot/
+    - title: "ETC"
+      url: /categories/etc/
 
   - title: "Security"
-    url: /categories/security/
+    children:
+    - title: "Security"
+      url: /categories/security/
+    - title: "Tutoring"
+      url: /categories/tutoring/
   - title: "Study"
     url: /categories/study/
   - title: "Blog"

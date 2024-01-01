@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 짝지어 제거하기"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 짝지어 제거하기"
+excerpt: "Programmers 짝지어 제거하기"
 
 categories:
     - Programmers

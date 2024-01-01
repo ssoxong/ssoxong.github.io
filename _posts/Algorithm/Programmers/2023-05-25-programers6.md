@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 이진 변환 반복하기"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 이진 변환 반복하기"
+excerpt: "Programmers 이진 변환 반복하기"
 
 categories:
     - Programmers

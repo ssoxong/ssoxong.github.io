@@ -1,7 +1,6 @@
 ---
-title: "Programmers - 숫자 짝꿍"
-excerpt: "Programmers post"
-
+title: "[프로그래머스][자바] 숫자 짝꿍"
+excerpt: "Programmers 숫자 짝꿍"
 categories:
     - Programmers
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "Network Programming - TLS 서버 구축"
+title: "[네트워크 프로그래밍] TLS 서버 구축"
 excerpt: "NP Post"
 
 categories:
@@ -146,5 +146,3 @@ https 프로토콜을 이용하여 웹서버로부터 데이터를 가져오는 
 
 
 </div></details>
-
-끝..

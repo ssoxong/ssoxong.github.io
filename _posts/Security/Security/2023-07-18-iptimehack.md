@@ -1,5 +1,5 @@
 ---
-title: "iptime 공유기 펌웨어 해킹 (N604SE)"
+title: "[정보보안] iptime 공유기 펌웨어 해킹 (N604SE)"
 excerpt: "Security Post"
 
 categories:

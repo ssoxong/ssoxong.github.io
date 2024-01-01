@@ -1,5 +1,5 @@
 ---
-title: "2023-1 SW Tutoring - TLS_Background"
+title: "[정보보안] TLS_Background"
 excerpt: "Tutoring Post"
 
 categories:

@@ -1,5 +1,5 @@
 ---
-title: "Network Programming - Multi Process"
+title: "[네트워크 프로그래밍] Multi Process"
 excerpt: "NP post"
 
 categories:

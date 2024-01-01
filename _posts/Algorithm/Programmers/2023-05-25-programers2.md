@@ -1,7 +1,6 @@
 ---
-title: "Programmers - 다음에 올 숫자"
-excerpt: "Programmers post"
-
+title: "[프로그래머스][자바] 다음에 올 숫자"
+excerpt: "Programmers 다음에 올 숫자"
 categories:
     - Programmers
 tags:

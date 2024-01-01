@@ -1,5 +1,5 @@
 ---
-title: "GitBlog - 마크다운 토글 & 코드 입력"
+title: "[깃블로그] 마크다운 토글 & 코드 입력"
 excerpt: "git-blog post"
 
 categories:

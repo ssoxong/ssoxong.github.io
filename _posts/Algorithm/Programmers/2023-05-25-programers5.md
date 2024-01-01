@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 암호 해독"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 암호 해독"
+excerpt: "Programmers 암호 해독"
 
 categories:
     - Programmers

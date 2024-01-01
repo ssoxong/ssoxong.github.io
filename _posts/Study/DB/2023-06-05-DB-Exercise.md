@@ -1,5 +1,5 @@
 ---
-title: "DB 정리 및 연습문제"
+title: "[데이터베이스][Oracle] 정리 및 연습문제"
 excerpt: "Data Base post"
 
 categories:

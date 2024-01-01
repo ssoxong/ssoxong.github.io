@@ -1,6 +1,6 @@
 ---
-title: "Data Base - ER Diagram"
-excerpt: "DB post"
+title: "[데이터베이스] ER Diagram"
+excerpt: "Data Base post"
 
 categories:
     - DB

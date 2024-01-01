@@ -1,5 +1,5 @@
 ---
-title: "git-blog 생성"
+title: "[깃블로그] git-blog 생성"
 excerpt: "git-blog post test"
 
 categories:

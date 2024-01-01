@@ -1,5 +1,5 @@
 ---
-title: "System Programming - Concurrency"
+title: "[시스템 프로그래밍] Concurrency"
 excerpt: "SP post"
 
 categories:

@@ -1,6 +1,6 @@
 ---
-title: "Programmers - 합성수 찾기"
-excerpt: "Programmers post"
+title: "[프로그래머스][자바] 합성수 찾기"
+excerpt: "Programmers 합성수 찾기"
 
 categories:
     - Programmers
