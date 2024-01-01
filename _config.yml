@@ -25,6 +25,7 @@ subtitle: # site tagline that appears below site title in masthead
 name: "ssoxong" # 블로그 닉네임 설정
 # description: "뭐든 열심히 하고싶어요!!" # 블로그 설명
 url: "https://ssoxong.github.io" # 블로그 URL
+# url: "http://localhost:4000" # 블로그 URL
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "ssoxong/ssoxong.github.io" # GitHub Repo 이름
 teaser: #
