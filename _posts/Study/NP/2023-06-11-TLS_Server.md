@@ -3,7 +3,7 @@ title: "[네트워크 프로그래밍] TLS 서버 구축"
 excerpt: "NP Post"
 
 categories:
-    - NetworkProgramming
+    - Lecture
 tags:
   - [Network, TLS, Server]
 

@@ -1,9 +1,9 @@
 ---
-title: "Cloud"
+title: "Lecture"
 layout: category
-permalink: /categories/cloud/
+permalink: /categories/lecture/
 author_profile: true
-taxonomy: Cloud
+taxonomy: Lecture
 sidebar:
   nav: "categories"
 ---

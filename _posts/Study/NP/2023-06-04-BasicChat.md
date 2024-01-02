@@ -3,7 +3,7 @@ title: "[네트워크 프로그래밍] Basic Chatting App"
 excerpt: "NP post"
 
 categories:
-    - NetworkProgramming
+    - Lecture
 tags:
   - [Network, Programming, TCP, Chat]
 

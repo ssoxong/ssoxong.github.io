@@ -1,9 +1,9 @@
 ---
-title: "Study"
+title: "AWS"
 layout: category
-permalink: /categories/study/
+permalink: /categories/aws/
 author_profile: true
-taxonomy: Study
+taxonomy: AWS
 sidebar:
   nav: "categories"
 ---

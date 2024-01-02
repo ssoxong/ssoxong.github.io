@@ -26,7 +26,7 @@ Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 
 
 ## 문제 풀이
 
-1. heapq를 통해 scoville 배열이 항상 정렬된 형태를 가지도록 한다.  
+1.heapq를 통해 scoville 배열이 항상 정렬된 형태를 가지도록 한다.  
 heapq는 모든 부모 노드가 자식보다 작거나 같은 값을 갖는 이진 트리이기 때문에 작은 스코빌 지수부터 연산하는 문제에 사용하기 적합하다.  
 
 ```python
@@ -35,7 +35,7 @@ import heapq
 heapq.heapify(scoville) # scoville 리스트를 heapq로 변경
 ```  
 
-2. scoville의 원소 모두 원하는 스코빌 지수 (K)를 넘지 않을 때 **특별한 방법**으로 연산한다.  
+2.scoville의 원소 모두 원하는 스코빌 지수 (K)를 넘지 않을 때 **특별한 방법**으로 연산한다.  
 
 ```python
 #scoville의 원소 모두가 원하는 스코빌 지수를 넘었는지 검사
@@ -58,7 +58,7 @@ heapq.heappush(scoville,f+s*2)
 answer+=1 # 연산한 횟수 추가
 ```
 
-3. 반복 연산을 위해 2번 방법에 while(True) 추가
+3.반복 연산을 위해 2번 방법에 while(True) 추가
 
 ## 전체 코드
 

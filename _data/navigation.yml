@@ -26,7 +26,9 @@ categories:
       url: /categories/programmers/
 
   - title: "Cloud"
-    url: /categories/cloud/
+    children:
+    - title: "AWS"
+      url: /categories/aws/
 
   - title: "Develop"
     children:
@@ -34,6 +36,8 @@ categories:
       url: /categories/react/
     - title: "SpringBoot"
       url: /categories/springboot/
+    - title: "Blog"
+      url: /categories/blog/
     - title: "ETC"
       url: /categories/etc/
 
@@ -43,7 +47,8 @@ categories:
       url: /categories/security/
     - title: "Tutoring"
       url: /categories/tutoring/
+
   - title: "Study"
-    url: /categories/study/
-  - title: "Blog"
-    url: /categories/blog/
+    children:
+    - title: "Lecture"
+      url: /categories/lecture/
